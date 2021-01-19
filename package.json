@@ -1,11 +1,12 @@
 {
   "name": "vue3-barrel",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib --name vue3-barrel ./src/index.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -38,5 +39,21 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "description": "vue3.x barrel layout",
+  "main": "dist/vue3-barrel.umd.min.js",
+  "keywords": [
+    "vue3-barrel",
+    "barrel"
+  ],
+  "author": "dofeel",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idofeel/vue3-barrel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/idofeel/vue3-barrel/issues"
+  },
+  "homepage": "https://github.com/idofeel/vue3-barrel#readme"
 }

@@ -1,18 +1,23 @@
 .DS_Store
-node_modules
-# /dist
-
-
+node_modules/
+examples/
+src/
+packages/
+public/
+vue.config.js
+babel.config.js
+*.map
+*.html
+ 
 # local env files
 .env.local
 .env.*.local
-
+ 
 # Log files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-
+ 
 # Editor directories and files
 .idea
 .vscode
@@ -20,4 +25,4 @@ pnpm-debug.log*
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
+*.sw*
