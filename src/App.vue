@@ -17,18 +17,22 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, } from 'vue'
 import Vue3Barrel from '@/components/vue3-barrel'
+
+
 export default {
 	name: 'App',
 	components: {
 		Vue3Barrel
 	},
 	setup() {
+
+//  ctx.use(Vue3Barrel)
 		const list = ref([
 			{
 				url:
-					'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3363295869,2467511306&fm=26&gp=0.jpg',
+					'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpo2WK1HF6hhy/it/u=3363295869,2467511306&fm=26&gp=0.jpg',
 				title: '标题标题'
 			},
 			{

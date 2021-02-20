@@ -1,24 +1,31 @@
 # vue3-barrel
+### vue3.0x 
+## 使用方式
 
-## Project setup
 ```
-yarn install
-```
+<template>
+	<Vue3Barrel :data="list" :baseHeight="200" :gap="20" :debounce="200">
+		<template #default="item">
+			<div
+				:style="
+					`width:${item.width}px;height:${
+						item.height
+					}px;margin:${item.margin / 2}px`
+				"
+			>
+				<img :src="item.src" alt="" />
+				{{ item.title }}
+			</div>
+		</template>
+	</Vue3Barrel>
+</template>
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+<script>
 
-### Compiles and minifies for production
-```
-yarn build
-```
+import Vue3Barrel from '@/components/vue3-barrel'
 
-### Lints and fixes files
+export default {
+	components: { Vue3Barrel },
+}
+</script>
 ```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

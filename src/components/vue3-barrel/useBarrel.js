@@ -11,7 +11,7 @@ export default function(props) {
 
 	function getImgInfo(url) {
 		if (!url) return []
-		return new Promise((resolve) => {
+		return new Promise((resolve, reject) => {
 			const img = new Image()
 			img.src = url
 			let timer = null
@@ -29,6 +29,7 @@ export default function(props) {
 					timer = window.requestAnimationFrame(run)
 				}
 			}
+            img.onerror = reject
 			run()
 		})
 	}
@@ -60,9 +61,22 @@ export default function(props) {
 
 	const getImageData = Promise.all(
 		props.data.map(async (item) => {
+            let imgData = {}
+            try {
+                imgData  = await getImgInfo(item[props.props.url])
+            } catch (error) {
+                console.log(error);
+                imgData = {
+                    width: 100,
+                    height:100,
+                    realWidth: 100,
+                    realHeight: 100,
+                    src: item.url
+                }
+            }
 			return getStandardScale({
 				...item,
-				...(await getImgInfo(item[props.props.url]))
+				...imgData
 			})
 		})
 	)

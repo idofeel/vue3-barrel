@@ -1,6 +1,6 @@
 {
   "name": "vue3-barrel",
-  "version": "1.0.0",
+  "version": "1.12.1",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
